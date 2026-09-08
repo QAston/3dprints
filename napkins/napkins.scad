@@ -12,7 +12,7 @@ module logo() {
         
         difference(){
             translate([0,-108,0])
-            cube([266,230,200], center=true);
+            cube([266,150,200], center=true);
             cylinder(h=200, r=123, center=true);
         }
         
@@ -65,7 +65,7 @@ union(){
 module napkin1(){
 union(){
     logo_support();
-    translate([10,3,0])
+    translate([22,0,0])   
     difference(){
     
     napkin1_base();
@@ -78,7 +78,7 @@ union(){
 module napkin2(){
 union(){
     logo_support(true);
-    translate([10,3,0])
+    translate([22,0,0])
     difference(){
     
     napkin2_base();
