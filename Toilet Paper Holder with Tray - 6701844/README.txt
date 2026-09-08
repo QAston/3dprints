@@ -1,0 +1,4 @@
+Toilet Paper Holder with Tray by utahmini on Thingiverse: https://www.thingiverse.com/thing:6701844
+
+Summary:
+Just had new tile put in the bathroom and needed a new TP holder that kinda matched.  This design by @fuweissinger was great, but was too short to hold rolls of Costco/Kirkland TP, so I extended the arm ~9.5-10mm so it would fit and fixed some vertices at the base of the arm.  Also removed the screw holes and kept a flat back for 3M tape.2 Versions here:  RT for a right-handed paper rip and LT for a left-handed rip ;)Took about 3hrs 45min to print, used ASA for strength.  Printed .3 height, 4 walls and 15% Gyroid infill.Cheers!

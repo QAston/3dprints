@@ -1,0 +1,4 @@
+Generic 1-5 Bay 3.5" HDD Cage by squirtle_93 on Thingiverse: https://www.thingiverse.com/thing:4106284
+
+Summary:
+A generic 5 bay 3.5" hdd cage. Here is the 3.5" hdd caddy that goes with it: https://www.thingiverse.com/thing:4106276I made a cage for the Thermaltake V21. I have not yet printed this exact model. However it works perfect for the Thermaltake case. If you print this, please post some pictures so I can put them in the model description. Thank you.If you are looking for the Thermaltake V21 cage: https://www.thingiverse.com/thing:4106305UPDATEI added a second cage with ventilation holes and an nicer looking transation between both sides. I suggest printing this one.Update 2Added version with 1,2,3 or 4 bay cage

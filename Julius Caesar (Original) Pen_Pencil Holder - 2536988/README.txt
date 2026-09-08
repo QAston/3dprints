@@ -1,0 +1,4 @@
+Julius Caesar (Original) Pen/Pencil Holder by derailed3d on Thingiverse: https://www.thingiverse.com/thing:2536988
+
+Summary:
+To obtain a commercial selling license for my models, please visit https://patreon.com/derailed3d to support my work! Based on the honesty system and the spirit of artists supporting artists :)If you don't own a 3D printer, I do sell printed versions on my website printed here. Thanks for the support!If you like this model, please consider leaving a tip or donation here and it will help support me and my work! Cheers!Copy &amp; Paste attribution for Etsy: "Original model made by DERAILED3D, available at https://www.thingiverse.com/thing:2536988. For more information, visit https://derailed3d.com."Based on the Julius Caesar Marble sculpture at the Metropolitan Museum of Art in New York, by Andrea di Pietro di Marco Ferrucci (1465 - 1526).

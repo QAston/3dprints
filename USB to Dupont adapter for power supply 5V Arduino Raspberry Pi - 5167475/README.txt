@@ -1,0 +1,4 @@
+USB to Dupont adapter for power supply 5V Arduino Raspberry Pi by PROSCH on Thingiverse: https://www.thingiverse.com/thing:5167475
+
+Summary:
+This is a simple adaptor I created to not always solder cables and usb plugs. These are expensive too.. Two single male Dupont connectors can be inserted and when it is pluged into a USB port you are able to harness power from it for any reason imaginable. I use them to power my Lattepanda and after several prints and improvements I can proudly share this very handy gadget. I think it will be interesting for Arduino stuff.Have fun :)!!! Always make sure you connect it the correct way !!!I am in no way responsible for any damage that occurs with this part. 

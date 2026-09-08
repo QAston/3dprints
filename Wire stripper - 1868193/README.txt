@@ -1,0 +1,4 @@
+Wire stripper by dragon1020 on Thingiverse: https://www.thingiverse.com/thing:1868193
+
+Summary:
+Wire stripper. Not very beautiful (this is too big blade for this tool), but works well. All you need is M3 screw, M3 nut, and utility blade.UPDATE: Made version 2 - stronger and without useless trigger. :) I suggest to use supports while printing for M3 nut hole, but some folks says, that it prints fine without using supports.HINT: You can strip really thin wires (for example from servo motor or RC flight controller (0.8 mm in diameter with insulation)) with last third of the blade, near ring for finger.

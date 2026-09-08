@@ -1,0 +1,4 @@
+Drilling guide and drill dust collector for wall drilling by aleung on Thingiverse: https://www.thingiverse.com/thing:3023372
+
+Summary:
+A simple to use drilling guide for drilling perpendicular/straight holes. A container is added to collect drill dust when drilling on wall.It's customizable. Click "Open in Customizer" to generate your own model. Or you may find one suitable for you from the existing remixes and download STL file. If you don't need the sawdust collector, get the original: https://www.thingiverse.com/thing:3013962And also check out this drilling dust collector using cola bottle if you don't need the drilling guide.Check this remix: https://www.thingiverse.com/thing:4978430I didn't print it, but it looks to be an awesome remix.

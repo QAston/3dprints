@@ -1,0 +1,4 @@
+USB and SD card holder for wide USB sticks by Lalo_Solo on Thingiverse: https://www.thingiverse.com/thing:952885
+
+Summary:
+This holder was inspired by others that are around, but that had the problem of not allocating USB sticks that are wider, including the SD adapter-reader.This design allocates very well up to 8 USB wide sticks, and 8 SD cards of standard size, but only 5 micro-SD.Also added holes to prevent from dust accumulation, and reduce a little the material used to print it.* There is an improved version of this design available, try it here USB SD and MicroSD holder for wide USB sticks

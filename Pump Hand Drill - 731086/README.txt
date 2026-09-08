@@ -1,0 +1,4 @@
+Pump Hand Drill by speedy777 on Thingiverse: https://www.thingiverse.com/thing:731086
+
+Summary:
+ Just for the record, I have always credited Performance 3D for the original concept and said this was my rendition of their drill as it was not available for download at that time. Since I designed my version and posted it here, they have made their version available on their web site. 3Dprint.com wanted to do an article on it and I declined and pointed them to Performance 3D. So I am NOT trying to take credit for it. I only wished to share a design that I admired and which was not available for download at that time.   My rendition of a hand drill received from Performance 3D LLC  Added 3 chuck sizes  Video here: http://youtu.be/ut9gKJPn2f4

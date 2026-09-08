@@ -1,0 +1,4 @@
+Formd T1 HDD Mount - Mounts two 3.5" HDDs in the Formd T1 by Applechip on Thingiverse: https://www.thingiverse.com/thing:5489089
+
+Summary:
+This 3d printed part allows you to mount two 3.5" hard drives in the Formd T1. If you use this bracket near the PSU, you can mount two directly on top of each other still leaving room for one fan in the case. You can use any hard drive screws; however, I was able to use the larger screws that came with the case for the bottom mounted HDD, and the smaller ones for the HDD that is screwed in from the side.  You'll need two fan screws if you want to hold the bracket in place if you're mounting this bracket on the bottom of the case.For more photos and help installing, check out my Etsy listing: https://www.etsy.com/BlueThreadGear/listing/1296637045/formd-t1-double-35-hard-drive-bracket?utm_source=Copy&amp;utm_medium=ListingManager&amp;utm_campaign=Share&amp;utm_term=so.lmsm&amp;share_time=1661969597677

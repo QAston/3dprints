@@ -1,0 +1,4 @@
+Rustic Display Shelves by GCV3D on Thingiverse: https://www.thingiverse.com/thing:6958669
+
+Summary:
+I needed more room to display my 3d prints so I decided to go “vertical” and design some 3-tier collapsible display shelves with a rustic, wooden appearance.  They are a fantastic way show off smaller prints while saving space of just placing them all horizontally.  Really, they are an excellent way to store / display any small object you could think of, like spices or collectibles.Printing &amp; Assembly TipsNo supports necessary.  I highly recommend printing with a brown or wooden filament.To assemble, simply slide shelves into their slots on the stands.Please like it if you do and leave any comments!  If you're really feeling generous please consider buying me a coffee so I can keep creating!Check out my TikTok!Check out my YouTube!
