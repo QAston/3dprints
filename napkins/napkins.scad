@@ -1,5 +1,5 @@
 connectoroffsetx=22;
-bottomwidth=110;
+bottomwidth=90;
 
 module logo() {
     logoscale = 0.45;
@@ -35,14 +35,27 @@ module napkin2_base() {
     import("napkin2.stl", center=true);
 }
 
-module support_shape(scalex=1) {
+module base_support_shape(scalex=1) {
     scale([scalex, 1, scalex])
     intersection(){
         difference(){
             translate([0, -313.2,-100])
             cylinder(h=200, r=300);
-             translate([0, -313.2,-100])
+            translate([0, -313.2,-100])
             cylinder(h=200, r=296);
+        }
+        cube([158,100,109],center=true);
+    }
+}
+
+module support_shape(scalex=1) {
+    scale([scalex, 1, scalex])
+    intersection(){
+        intersection(){
+            translate([0, -313.2,-100])
+            cylinder(h=200, r=300);
+            rotate([0,0,-3])
+           cube([158,40,109],center=true);
         }
         cube([158,100,109],center=true);
     }
@@ -78,9 +91,9 @@ union(){
             translate([-51,-14,0])
             cube(center=true, [10,5,bottomwidth]);
         }
-        support_shape();
+        base_support_shape();
         translate([0,1,0])
-            support_shape();
+            base_support_shape();
 
         translate([-connectoroffsetx,0,0])
         support_shape(1.4);
@@ -94,7 +107,7 @@ module glue_cutout() {
     difference(){
 
     translate([0,-2.5,0])
-    cube(center=true, [10,2.5,bottomwidth]);
+    cube(center=true, [10,4,bottomwidth]);
     translate([-11,2,0])
     cylinder(h=bottomwidth, r=10, center=true);
     translate([11,2,0])
@@ -136,7 +149,8 @@ $fn=300;
 //translate([0,-100,0])
 //napkin_connector(false);
 //difference() {
-napkin(true);
+//napkin(true);
+//support_shape();
 //translate([connectoroffsetx,2,0])   
 //glue_cutout();
 //}
