@@ -1,40 +1,42 @@
+connectoroffsetx=22;
+bottomwidth=110;
+
 module logo() {
-    scale([0.45,0.45,0.45])
+    logoscale = 0.45;
+    scale([logoscale,logoscale,logoscale])
     rotate([90,90,0])
     union(){
         translate([0,20,0])
         linear_extrude(height=100, center=true)
         import("logo.svg", center=true);
         difference(){
-        union(){
-        difference(){
             cylinder(h=200, r=133, center=true);
             cylinder(h=200, r=123, center=true);
         }
-        translate([0,-150,0])
-        intersection(){
-            translate([0,35,0])
-            cube([266,80,200], center=true);
-            difference(){
-                cylinder(h=200, r=133, center=true);
-                cylinder(h=200, r=123, center=true);
-            }
+        
+        difference(){
+            translate([0,-108,0])
+            cube([bottomwidth/0.45,135,200], center=true);
+            cylinder(h=200, r=123, center=true);
         }
-        }
-        cylinder(h=200, r=123, center=true);
-        }
-        //difference(){
-        //    translate([0,-80,0])
-        //    cube([266,180,200], center=true);
-        //    cylinder(h=200, r=123, center=true);
-        //}
         
     }
 }
 
+
+
+module napkin1_base() {
+    import("napkin1.stl", center=true);
+}
+
+module napkin2_base() {
+    translate([0,-0.8,0])
+    rotate([0,180,0])
+    import("napkin2.stl", center=true);
+}
+
 module support_shape(scalex=1) {
     scale([scalex, 1, scalex])
-    
     intersection(){
         difference(){
             translate([0, -313.2,-100])
@@ -48,38 +50,73 @@ module support_shape(scalex=1) {
 
 module logo_support(m=false) {
 scalex=1;
+    union(){
+        intersection(){
+        translate([30,0,0])
+        if (m)
+            logo();
+        else {
+            mirror([0,0,1])
+            logo();
+        }
+        support_shape(1.4   );
+        }
+
+    }
+}
+
+
+
+module napkin_connector(m=false) {
 union(){
-    intersection(){
-    translate([30,0,0])
-    if (m)
-        logo();
-    else {
-        mirror([0,0,1])
-        logo();
-    }
-    support_shape(1.4   );
-    }
+    difference(){
+        union(){
+            if (m)
+                napkin1_base();
+            else
+                napkin2_base();
+            translate([-51,-14,0])
+            cube(center=true, [10,5,bottomwidth]);
+        }
+        support_shape();
+        translate([0,1,0])
+            support_shape();
 
+        translate([-connectoroffsetx,0,0])
+        support_shape(1.4);
+    }
+    glue_cutout();
 }
 }
 
-module napkin_side(){
+module glue_cutout() {
+    translate([-51,-12,0])
+    difference(){
+
+    translate([0,-2.5,0])
+    cube(center=true, [10,2.5,bottomwidth]);
+    translate([-11,2,0])
+    cylinder(h=bottomwidth, r=10, center=true);
+    translate([11,2,0])
+    cylinder(h=bottomwidth, r=10, center=true);
+    }
+    
+
+}
+
+
+module napkin(m=false){
 union(){
-    translate([-40,-16,0])
-    cylinder(h=120, r=3, center=true);
-    logo_support(true);
-}
-}
-
-module connector_side() {
-    minkowski(){
-    sphere(r=3);
-    cube([0.001,80,110], center=true);
+    difference(){
+        logo_support(m);
+        translate([connectoroffsetx,0,0]) 
+        glue_cutout();
     }
+    //translate([connectoroffsetx,0,0])   
+
+    //napkin_connector(m);
 }
-
-//connector_side();
-
+}
 
 $fn=300;
 //support_shape(1.5);
@@ -97,4 +134,11 @@ $fn=300;
 
 //rotate([180, 0,0])
 //translate([0,-100,0])
-napkin_side();
+//napkin_connector(false);
+//difference() {
+napkin(true);
+//translate([connectoroffsetx,2,0])   
+//glue_cutout();
+//}
+//napkin_connector(false);
+//import("napkin1.stl", center=true);
