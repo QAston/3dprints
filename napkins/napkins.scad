@@ -6,33 +6,35 @@ module logo() {
         linear_extrude(height=100, center=true)
         import("logo.svg", center=true);
         difference(){
+        union(){
+        difference(){
             cylinder(h=200, r=133, center=true);
             cylinder(h=200, r=123, center=true);
         }
-        
-        difference(){
-            translate([0,-108,0])
-            cube([266,150,200], center=true);
-            cylinder(h=200, r=123, center=true);
+        translate([0,-150,0])
+        intersection(){
+            translate([0,35,0])
+            cube([266,80,200], center=true);
+            difference(){
+                cylinder(h=200, r=133, center=true);
+                cylinder(h=200, r=123, center=true);
+            }
         }
+        }
+        cylinder(h=200, r=123, center=true);
+        }
+        //difference(){
+        //    translate([0,-80,0])
+        //    cube([266,180,200], center=true);
+        //    cylinder(h=200, r=123, center=true);
+        //}
         
     }
 }
 
-
-
-module napkin1_base() {
-    import("napkin1.stl", center=true);
-}
-
-module napkin2_base() {
-    translate([0,-0.8,0])
-    rotate([0,180,0])
-    import("napkin2.stl", center=true);
-}
-
 module support_shape(scalex=1) {
     scale([scalex, 1, scalex])
+    
     intersection(){
         difference(){
             translate([0, -313.2,-100])
@@ -61,32 +63,22 @@ union(){
 }
 }
 
-
-module napkin1(){
+module napkin_side(){
 union(){
-    logo_support();
-    translate([22,0,0])   
-    difference(){
-    
-    napkin1_base();
-    support_shape();
-    }
-    
-}
-}
-
-module napkin2(){
-union(){
+    translate([-40,-16,0])
+    cylinder(h=120, r=3, center=true);
     logo_support(true);
-    translate([22,0,0])
-    difference(){
-    
-    napkin2_base();
-    support_shape();
+}
+}
+
+module connector_side() {
+    minkowski(){
+    sphere(r=3);
+    cube([0.001,80,110], center=true);
     }
-    
 }
-}
+
+//connector_side();
 
 
 $fn=300;
@@ -105,6 +97,4 @@ $fn=300;
 
 //rotate([180, 0,0])
 //translate([0,-100,0])
-napkin2();
-//napkin1();
-//import("napkin1.stl", center=true);
+napkin_side();
