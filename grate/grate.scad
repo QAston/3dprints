@@ -1,4 +1,7 @@
 module fill() {
+    inside_circle = 50;
+    inside_circle_scale=0.7;
+    inside_circle_d = 78;
     difference() {
         union() {
             difference() {
@@ -7,12 +10,12 @@ module fill() {
                     cube([85,85,2], center=true);
              }
              
-            linear_extrude(4)
-                circle(d=86, center=true);
+            linear_extrude(inside_circle, scale=inside_circle_scale)
+                circle(d=inside_circle_d+6, center=true);
         }
         translate([0,0,0])
-        linear_extrude(4)
-            circle(d=80, center=true);
+        linear_extrude(inside_circle, scale=inside_circle_scale+0.03)
+            circle(d=inside_circle_d, center=true);
      }
 }
 
@@ -21,7 +24,7 @@ module holes() {
 
     sq_size = 100;
     center_spacing = 6;
-    height = 15;
+    height = 4;
     diameter = 4;
 
     difference() {
@@ -51,8 +54,12 @@ module holes() {
 }
 
 $fn=100;
-    
-difference() {
-fill();
-holes();
+
+module grate() {  
+    difference() {
+    fill();
+    holes();
+    }
 }
+
+grate();

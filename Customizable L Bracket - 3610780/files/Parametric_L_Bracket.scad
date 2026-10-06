@@ -7,11 +7,11 @@ screwHoleDiameter = 3.4;
 // Screw clearance hole counterbore diameter (mm)
 screwHoleCounterboreDiameter = 6.5;
 // Screw clearance hole counterbore depth (mm)
-screwHoleCounterboreDepth = 3;
+screwHoleCounterboreDepth = 2;
 // Number of screw holes on side 1 (length dimension)
-side1Holes = 2;
+side1Holes = 3;
 // Spacing of screw holes on side 1 (mm)
-side1HoleSpacing = 10;
+side1HoleSpacing = 16;
 // Spacing between corner axis and first screw hole on side 1 (mm)
 side1HoleOffset = 12;
 // Number of screw holes on side 2 (length dimension)
@@ -21,27 +21,27 @@ side2HoleSpacing = 10;
 // Spacing between corner axis and first screw hole on side 2 (mm)
 side2HoleOffset = 12;
 // Number of screw holes in width direction (essentially extends the bracket along the corner axis)
-widthHoles = 2;
+widthHoles = 3;
 // Width of bracket (per hole on width axis) (mm)
-widthHoleSpacing = 10;
+widthHoleSpacing = 22;
 // Margin around holes on width and length axes (mm)
-holeMargin = 6;
+holeMargin = 12;
 // Thickness of the bracket (mm)
-thickness = 5;
+thickness = 4;
 // Fillet radius (mm)
 filletRadius = 5;
 // Fillet the corner axis?
-filletCornerAxis = 1; // [0:no, 1:yes]
+filletCornerAxis = 0; // [0:no, 1:yes]
 // Fillet radius for corner axis (mm)
 filletCornerAxisRadius = 5;
 // Gusset on left side?
-gussetLeft = 1; // [0:no, 1:yes]
+gussetLeft = 0; // [0:no, 1:yes]
 // Gusset on right side?
 gussetRight = 1; // [0:no, 1:yes]
 // Gusset size (in both dimensions) (mm)
-gussetSize = 18;
+gussetSize = 44;
 // Gusset thickness (mm)
-gussetThickness = 2;
+gussetThickness = 3;
 // Number of segments used to make circular shapes
 circleRes = 20;
 
@@ -98,7 +98,6 @@ module bracketSideHoles() {
         }
     }
 }
-
 difference() {
     union() {
         bracketSide();
@@ -115,5 +114,10 @@ difference() {
     union() {
         bracketSideHoles();
         rotate([0, 90, 0]) mirror([1, 0, 0]) bracketSideHoles();
+        mirror([1,0,0]) rotate([0, 0,90]) mirror([0, 0, 1]) rotate([90,90,90]) bracketSideHoles();
+
+        translate([0,length+12.2,0])
+        rotate([0, 0,-90]) mirror([0, 0, 1]) rotate([90,90,90]) bracketSideHoles();
     }
 }
+                
