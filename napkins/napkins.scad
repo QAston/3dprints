@@ -1,13 +1,15 @@
 connectoroffsetx=22;
 bottomwidth=90;
+$fn=300;
+scalereduction = 0.9;
 
 module logo() {
-    logoscale = 0.45;
+    logoscale = 0.45 * scalereduction;
     scale([logoscale,logoscale,logoscale])
     rotate([90,90,0])
     union(){
         translate([0,20,0])
-        linear_extrude(height=100, center=true)
+        linear_extrude(height=200, center=true)
         import("logo.svg", center=true);
         difference(){
             cylinder(h=200, r=133, center=true);
@@ -16,7 +18,7 @@ module logo() {
         
         difference(){
             translate([0,-108,0])
-            cube([bottomwidth/0.45,135,200], center=true);
+            cube([bottomwidth/0.45,155,200], center=true);
             cylinder(h=200, r=123, center=true);
         }
         
@@ -82,28 +84,35 @@ scalex=1;
 
 module napkin_connector(m=false) {
 union(){
+    scale([scalereduction,scalereduction,scalereduction])
     difference(){
+        translate([0,-3,0])
         union(){
-            if (m)
-                napkin1_base();
-            else
-                napkin2_base();
-            translate([-51,-14,0])
+            difference(){
+                if (m)
+                    napkin1_base();
+                else
+                    napkin2_base();
+                base_support_shape();
+                translate([0,3,0])
+                    base_support_shape();
+            }
+            translate([-51,-11,0])
             cube(center=true, [10,5,bottomwidth]);
         }
-        base_support_shape();
-        translate([0,1,0])
-            base_support_shape();
+
 
         translate([-connectoroffsetx,0,0])
         support_shape(1.4);
     }
+    translate([-5,0,0])
+    scale([scalereduction,scalereduction,scalereduction])
     glue_cutout();
 }
 }
 
 module glue_cutout() {
-    translate([-51,-12,0])
+    translate([-45,-12,0])
     difference(){
 
     translate([0,-2.5,0])
@@ -125,13 +134,13 @@ union(){
         translate([connectoroffsetx,0,0]) 
         glue_cutout();
     }
-    //translate([connectoroffsetx,0,0])   
+    translate([connectoroffsetx,0,0])   
 
-    //napkin_connector(m);
+    napkin_connector(m);
 }
 }
 
-$fn=300;
+
 //support_shape(1.5);
 //logo_support()
 //logo();
@@ -149,8 +158,10 @@ $fn=300;
 //translate([0,-100,0])
 //napkin_connector(false);
 //difference() {
-//napkin(true);
+napkin_connector(false);
 //support_shape();
+//logo();
+//napkin();
 //translate([connectoroffsetx,2,0])   
 //glue_cutout();
 //}
