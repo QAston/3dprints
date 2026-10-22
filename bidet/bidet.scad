@@ -59,7 +59,7 @@ module corner(l=15) {
     }
 }
 //catcher(14);
-scale([1,1,1.5])
+scale([1.1,1.1,2])
 catcher(true);
 hanger_foot();
 $fn=100;
