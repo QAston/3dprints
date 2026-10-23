@@ -25,6 +25,7 @@ holder_triangle_support=40;
 holder_x = body_width + 2 * holder_thickness;
 holder_y = holder_triangle_support + top_holder_depth + 2* holder_thickness + holder_travel_space_y; 
 holder_z = body_thickness+ 2*holder_thickness + holder_travel_space_z;
+holder_plate_rside_support=4;
 
 module lock_knob(){
 translate([0, 0 ,locking_plate_thickness*0.5])
@@ -80,15 +81,20 @@ union(){
     translate([(insert_handle_thickness) * -0.5,holder_travel_space_y*-0.5,(insert_z-body_thickness)*-0.5])
     cube([insert_x - insert_handle_thickness,insert_y - holder_travel_space_y + insert_buffer,body_thickness], center=true);
     translate([insert_x*0.31,0,0])
-    cube([insert_handle_thickness*0.7,insert_y , insert_z*0.7], center=true);
+    cube([insert_handle_thickness*0.7,insert_y , insert_z*0.6], center=true);
+    
+    // bottom cutout
+    translate([-0.5* insert_x +holder_x* 0.5-holder_thickness,0,-insert_z*0.5 + holder_plate_rside_support*0.5])
+    cube([holder_x,insert_y, holder_plate_rside_support], center=true);
 }
+
 }
 
 //holder_triangle_support=20;
 //holder_x = body_width + 2 * holder_thickness;
 //translate([0,0,holder_thickness])
 //holder_insert();
-holder_plate();
+//holder_plate();
 
 
 module holder_lock(){
@@ -125,9 +131,16 @@ difference(){
                 cube([xsize, ysize, holder_wall_height], center=true);
                 
             }
-            translate([15, yhole2+20, holder_plate_thickness*0.5])
+             translate([39,-(entrance_hole_to_hole+entrance_hole_to_top + holder_travel_space_y)/2 - top_holder_depth, holder_plate_rside_support*0.5])
+            difference(){
+                cube([holder_plate_rside_support, ysize, holder_plate_rside_support],center=true);
+                translate([-holder_plate_thickness, 0, holder_plate_thickness])
+                cube([holder_plate_rside_support, ysize, holder_plate_rside_support], center=true);
+                
+            }
+            translate([20, yhole2+20, holder_plate_thickness*0.5])
                 cube([hole_support_xsize, hole_support_ysize, holder_plate_thickness], center=true);
-            translate([15, yhole3+20, holder_plate_thickness*0.5])
+            translate([20, yhole3+20, holder_plate_thickness*0.5])
                 cube([hole_support_xsize, hole_support_ysize, holder_plate_thickness], center=true);
         }
     }
